@@ -77,7 +77,7 @@ function updateProgress() {
         } else {
             circle.classList.remove("active");
         }
-		circle.textContent = i;
+		// circle.textContent = i;
     }
 
     // Update tracker
