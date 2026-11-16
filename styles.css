@@ -1,1 +1,107 @@
-/*  your css code here. If applicable */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: linear-gradient(135deg, #0f172a, #1e293b);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+#container {
+    width: 620px;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+/* Progress Background */
+#progress {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 8px;
+    transform: translateY(-50%);
+    background: rgba(255,255,255,0.2);
+    border-radius: 10px;
+    overflow: hidden;
+    z-index: 0;
+}
+
+/* Progress Fill */
+#tracker {
+    width: 0%;
+    height: 100%;
+    background: linear-gradient(90deg,#00e676,#00c853);
+    border-radius: 10px;
+    transition: width .4s ease;
+}
+
+/* Circles */
+.circle {
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    background: white;
+    border: 4px solid #00c853;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+    z-index: 2;
+    transition: .35s;
+    box-shadow: 0 0 15px rgba(255,255,255,.3);
+}
+
+/* Active Circle */
+.circle.active {
+    background: #00c853;
+    color: white;
+    transform: scale(1.15);
+    box-shadow:
+        0 0 15px #00e676,
+        0 0 30px #00e676,
+        0 0 45px rgba(0,230,118,.5);
+}
+
+/* Buttons */
+button {
+    padding: 12px 28px;
+    margin: 10px;
+    border: none;
+    border-radius: 10px;
+    background: linear-gradient(135deg,#2563eb,#1d4ed8);
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: .25s;
+    box-shadow: 0 5px 15px rgba(37,99,235,.4);
+}
+
+button:hover:not(:disabled) {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(37,99,235,.5);
+}
+
+button:active:not(:disabled) {
+    transform: scale(.96);
+}
+
+button:disabled {
+    background: #6b7280;
+    cursor: not-allowed;
+    opacity: .6;
+    box-shadow: none;
+}
